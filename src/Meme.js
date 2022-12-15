@@ -1,26 +1,23 @@
-import React from 'react';
-import meme from './img.png';
-import memesData from "./memesData";
+import React from "react"
+import memesData from "./memesData"
 
 export default function Meme() {
+    const [memeImage, setMemeImage] = React.useState("")
 
-    function randomMeme() {
-        const memesArray = memesData.data.memes;
-        const randomNum = Math.floor(Math.random() * memesArray.length);
-        //console.log(memesArray[randomNum]);
-
-        const url = memesArray[randomNum].url;
-        console.log(url);
+    function getMemeImage() {
+        const memesArray = memesData.data.memes
+        const randomNum = Math.floor(Math.random() * memesArray.length)
+        setMemeImage(memesArray[randomNum].url)
     }
 
-    return(
-        <div className="meme">
+    return (
+        <main className="meme">
             <form className="inputs">
                 <input type="text" className="top_line" placeholder="Shut up"/>
-                <input type="text" className="bottom_line" placeholder="and take my money" />
-                <button onClick={randomMeme}>Get a new meme image 🖼</button>
+                <input type="text" className="bottom_line" placeholder="and take my money"/>
+                <button onClick={getMemeImage}>Get a new meme image 🖼</button>
             </form>
-        </div>
-
+            <img src={memeImage} className="meme-image" />
+        </main>
     )
 }
