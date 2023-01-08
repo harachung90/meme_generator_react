@@ -77,6 +77,11 @@ button {
     color: white;
 }
 
+.meme--image {
+    max-width: 100%;
+    border-radius: 3px;
+}
+
 .meme-image {
     max-width: 100%;
     display: block;
@@ -117,7 +122,6 @@ button {
             -2px 0 0 #000,
             2px 2px 5px #000;
 }
-
 
 .meme {
     position: relative;
